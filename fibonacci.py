@@ -1,17 +1,19 @@
+## https://technobeans.wordpress.com/2012/04/16/5-ways-of-fibonacci-in-python/
 ## Example 1: Using looping technique
 def fib(n):
- a,b = 1,1
- for i in range(n-1):
-  a,b = b,a+b
- return a
-print fib(5)
+  a,b = 1,1
+  for i in range(n-1):
+    a,b = b,a+b
+  return a
+
+print(fib(5))
  
 ## Example 2: Using recursion
 def fibR(n):
  if n==1 or n==2:
   return 1
  return fib(n-1)+fib(n-2)
-print fibR(5)
+print(fibR(5))
  
 ## Example 3: Using generators
 a,b = 0,1
@@ -25,7 +27,7 @@ f.next()
 f.next()
 f.next()
 f.next()
-print f.next()
+print(f.next())
  
 ## Example 4: Using memoization
 def memoize(fn, arg):
@@ -36,7 +38,7 @@ def memoize(fn, arg):
  
 ## fib() as written in example 1.
 fibm = memoize(fib,5)
-print fibm
+print(fibm)
  
 ## Example 5: Using memoization as decorator
 class Memoize:
@@ -54,4 +56,4 @@ def fib(n):
  for i in range(n-1):
   a,b = b,a+b
  return a
-print fib(5)
+print(fib(5))
